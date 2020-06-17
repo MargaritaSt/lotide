@@ -16,25 +16,14 @@ const eqArrays = function(array1, array2) {
   return match;
 };
 
-const assertEqual = function(actual, expected) {
-  if ((typeof actual) === 'string') {
-    if (actual === expected) {
-      console.log(`✅✅✅ Assertion Passed:  ${actual}  ===  ${expected}`);
-    } else {
-      console.log(`❌❌❌ Assertion Failed:  ${actual}  !==  ${expected}`);
-    }
-  } else {    // for numbers
-    if (actual === expected) {
-      console.log(`✅✅✅ Assertion Passed:  ${actual}   ===  ${expected}`);
-    } else  {
-      console.log(`❌❌❌ Assertion Failed:  ${actual}  !==  ${expected}`);
-    }
-  }
-};
-
-const assertArrayEqual = function(array1,array2,expected) {
+const assertArraysEqual = function(array1,array2) {
   let actual = eqArrays(array1,array2);
-  assertEqual(actual, expected);
+  if (actual === true) {
+    console.log(`✅✅✅ Assertion Passed:  ${array1}  ===  ${array2}`);
+  } else {
+    console.log(`❌❌❌ Assertion Failed:  ${array1}  !==  ${array2}`);
+  }
+
 };
 
-assertArrayEqual([1,2,4],[1,2,7],true);
+assertArraysEqual([1,2,4],[1,2,4]);
