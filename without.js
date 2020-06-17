@@ -1,4 +1,19 @@
-// FUNCTION IMPLEMENTATION
+const without = function(initialArray, arrayWithout) {
+  let finalArray = [];
+  for (let i = 0; i < initialArray.length; i++) {
+    finalArray.push(initialArray[i]);
+  }
+  
+  for (let i = 0; i < arrayWithout.length; i++) {
+    for (let a = 0; a < initialArray.length; a++) {
+      if (arrayWithout[i] === initialArray[a]) {
+        finalArray.splice(a,1);
+      }
+    }
+  }
+  console.log(finalArray);
+};
+
 const eqArrays = function(array1, array2) {
   let match;
   if (array1.length !== array2.length) {
@@ -15,7 +30,7 @@ const eqArrays = function(array1, array2) {
   }
   return match;
 };
-
+ 
 const assertEqual = function(actual, expected) {
   if ((typeof actual) === 'string') {
     if (actual === expected) {
@@ -32,9 +47,11 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const assertArrayEqual = function(array1,array2,expected) {
-  let actual = eqArrays(array1,array2);
-  assertEqual(actual, expected);
+const assertArraysEqual = function(arrayInitial, arrayExpected) {
+  let actual = eqArrays(arrayInitial,arrayExpected);
+  assertEqual(actual, true);
 };
 
-assertArrayEqual([1,2,4],[1,2,7],true);
+const words = ["hello", "world", "lighthouse"];
+without(words, ["lighthouse"]);
+assertArraysEqual(words, ["hello","world","lighthouse"]);
