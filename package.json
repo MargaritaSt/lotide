@@ -1,7 +1,7 @@
 {
   "name": "lotide",
   "version": "1.0.0",
-  "description": "lotide",
+  "description": "lotide project that contains the variaty of functions that help work with objects, arrays and the others elements",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/MargaritaSt/lotide.git"
   },
-  "author": "Margarita",
+  "author": "@margaritast/lotide",
+  "email": "margarita.struts@me.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MargaritaSt/lotide/issues"
